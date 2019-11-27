@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 # Create your models here.
 
-class Sightings(modelmodel):
+class Sightings(models.Model):
     Latitude = models.FloatField(
             max_length = 100,
             help_text=_('Latitude'),
@@ -12,7 +12,7 @@ class Sightings(modelmodel):
         max_length = 100,
         help_text=_('Longitude'),
         )
-    Unique_Squirrel_ID = CharField(
+    Unique_Squirrel_ID = models.CharField(
             max_length = 50,
             help_text=_('Squirrel_ID'),
             )
@@ -25,7 +25,7 @@ class Sightings(modelmodel):
             (AM,'AM'),
             (OTHER,'Other'),
             )
-    Shift = model.CharField(
+    Shift = models.CharField(
             max_length=3,
             choices= SHIFT_CHOICES,
             default = OTHER,
@@ -35,7 +35,7 @@ class Sightings(modelmodel):
             help_text=_('Bday of pet'),
             )
 
-    Running = model.BooleanField(
+    Running = models.BooleanField(
             default = False,
             help_text = _('Whether running?'),
             )
