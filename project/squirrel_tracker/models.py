@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 # Create your models here.
 
-class Sightings(models.Model):
+class Sighting(models.Model):
     latitude = models.FloatField(
             max_length = 100,
             help_text=_('Latitude'),
@@ -12,7 +12,7 @@ class Sightings(models.Model):
         max_length = 100,
         help_text=_('Longitude'),
         )
-    unique_Squirrel_ID = models.CharField(
+    unique_squirrel_ID = models.CharField(
             max_length = 50,
             help_text=_('Squirrel_ID'),
             )
@@ -152,4 +152,5 @@ class Sightings(models.Model):
                 default = False,
                 help_text = _('Whether run from?'),
                 )
-
+    def __str__(self):
+        return self.unique_squirrel_ID
