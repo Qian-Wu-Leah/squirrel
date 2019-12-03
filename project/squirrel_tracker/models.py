@@ -8,10 +8,12 @@ class Sighting(models.Model):
             max_length = 100,
             help_text=_('Latitude'),
             )
+
     longitude = models.FloatField(
         max_length = 100,
         help_text=_('Longitude'),
         )
+
     unique_squirrel_ID = models.CharField(
             max_length = 50,
             help_text=_('Squirrel_ID'),
@@ -26,7 +28,7 @@ class Sighting(models.Model):
             (OTHER,'Other'),
             )
     shift = models.CharField(
-            max_length=3,
+            max_length=5,
             choices= SHIFT_CHOICES,
             default = OTHER,
             )
@@ -152,5 +154,6 @@ class Sighting(models.Model):
                 default = False,
                 help_text = _('Whether run from?'),
                 )
+
     def __str__(self):
         return self.unique_squirrel_ID
