@@ -6,7 +6,7 @@ from .models import Sighting
 def map(request):
     sightings = Sighting.objects.all()
     context = {
-            'sighting':sightings,
+            'sightings':sightings,
             }
     return render(request,'squirrel_tracker/map.html',context)
 
