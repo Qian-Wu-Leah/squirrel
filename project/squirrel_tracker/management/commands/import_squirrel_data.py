@@ -26,8 +26,8 @@ class Command(BaseCommand):
                 if row['Unique Squirrel ID'] in Sighting.objects.values_list('unique_squirrel_ID', flat=True):
                     row['Unique Squirrel ID'] += '-R'
 
-                s = Sighting(latitude = float(row['X']),
-                longitude = float(row['Y']),
+                s = Sighting(latitude = float(row['Y']),
+                longitude = float(row['X']),
                 unique_squirrel_ID = row['Unique Squirrel ID'],
                 shift = row['Shift'],
                 date = datetime.datetime.strptime(row['Date'],'%m%d%Y'),
