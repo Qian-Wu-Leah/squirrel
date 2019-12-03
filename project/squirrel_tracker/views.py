@@ -11,19 +11,26 @@ def map(request):
     return render(request,'squirrel_tracker/map.html',context)
 
 def sightings(request):
-    return render(request,'squirrel_tracker/sightings.html',context={'squirrels':Sighting.objects.all}
+    squirrels = Sighting.objects.all()
+    context = {
+            'squirrels':squirrels,
+            }
+    return render(request,'squirrel_tracker/sightings.html',context)
 
 def stats(request):
     return HttpResponse(f"STATS")
 
 def add(request):
-    if request.method == 'POST':
+    #if request.method == 'POST':
         
     return HttpResponse(f"ADD")
 
 def ID(request,squirrel_ID):
     squirrel = Sighting.objects.get(unique_squirrel_ID = squirrel_ID)
-    return HttpResponse(f"Hi, I'm pet {squirrel.unique_squirrel_ID}")
+    context = {
+            'squirrel':squirrel,
+            }
+    return render(request,'squirrel_tracker/ID.html',context)
 
 
 
