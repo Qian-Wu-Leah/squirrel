@@ -11,12 +11,14 @@ def map(request):
     return render(request,'squirrel_tracker/map.html',context)
 
 def sightings(request):
-    return HttpResponse(f"Hi, I'm squirrel{Sighting.objects.all()}")
+    return render(request,'squirrel_tracker/sightings.html',context={'squirrels':Sighting.objects.all}
 
 def stats(request):
     return HttpResponse(f"STATS")
 
 def add(request):
+    if request.method == 'POST':
+        
     return HttpResponse(f"ADD")
 
 def ID(request,squirrel_ID):
