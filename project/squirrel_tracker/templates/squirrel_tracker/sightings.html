@@ -1,20 +1,22 @@
 
 
-<head>
-	To add an new squrrel sighting, click <a href='add/'><strong>HERE</strong></a>
+<h3>
+	To add an new squirrel sighting, click <a href='add/'><strong>HERE</strong></a>
 
-</head>
+</h3>
 
 
 <body>
 
 <div class = 'row'>
-{% for squirrel in squirrels %}
-	<p>
-	<a href = '{{squirrel.unique_squirrel_ID}}' id='{{squirrel.unique_squirrel_ID}}'/>{{squirrel.unique_squirrel_ID}}</a>
-	</p>
-	<br>
-{% endfor %}
+	<ul>	
+        {% for squirrel in squirrels %}
+        <li> 
+	    <a href = '{{squirrel.unique_squirrel_ID}}' id='{{squirrel.unique_squirrel_ID}}'/>{{squirrel.unique_squirrel_ID}}</a>
+	   
+	   
+        {% endfor %}
+	</ul>
 </div>
 
 

@@ -1,7 +1,20 @@
-<head>
-        Welcome to the page of squirrel {{ squirrel.unique_squirrel_ID }}   
-</head>
+<h3>
+        Welcome to the page of squirrel {{ squirrel.unique_squirrel_ID }}. You may edit or delete this entry.   
+</h3>
 
 <body>
 
+	<form action='' method = 'post'>
+		<p>
+		{% csrf_token %}
+	        {{ form.as_p }}
+	        <input type='submit' value='Submit'>
+	        </p>
+
+		<p>
+	        <b> Delete this entry instead:  </b>
+	        <a href = '{% url 'delete' squirrel_ID=form.instance.unique_squirrel_ID %}'><input type='button' value='Delete'>
+		</p>
+
+	</form>
 </body>

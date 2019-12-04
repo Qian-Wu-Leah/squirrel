@@ -84,6 +84,7 @@ class Sighting(models.Model):
     specific_location = models.CharField(
         max_length = 1000,
 	help_text=_('Specific Location'),
+        blank = True,
 	)
 
     running = models.BooleanField(
@@ -113,6 +114,7 @@ class Sighting(models.Model):
     other_activities = models.CharField(
         max_length = 1000,
         help_text=_('Other Activities'),
+        blank = True
         )
 
     kuks = models.BooleanField(
