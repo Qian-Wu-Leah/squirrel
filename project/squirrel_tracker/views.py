@@ -2,13 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Sighting
+from .forms import SightingForm
 
-from django.forms import ModelForm
-
-class SightingForm(ModelForm):
-    class Meta:
-        model = Sighting
-        fields = '__all__'
 
 def map(request):
     sightings = Sighting.objects.all()
@@ -40,9 +35,38 @@ def add(request):
 
 def ID(request,squirrel_ID):
     squirrel = Sighting.objects.get(unique_squirrel_ID = squirrel_ID)
+    form = SightingForm(request.POST or None, instance=squirrel)
     context = {
             'squirrel':squirrel,
+            'form':form,
             }
+    if form.is_valid():
+        squirrel = form.save()
+        squirrel.save()
+        context = {
+                'squirrel':squirrel,
+                'form':form,
+                }
     return render(request,'squirrel_tracker/ID.html',context)
 
+def delete(request, squirrel_ID):
+    squirrel = Sighting.objects.get(unique_squirrel_ID = squirrel_ID)
+    if request.method == 'POST':
+        squirrel.delete()
+        return redirect('sightings')
+    return render(request, 'squirrel_tracker/delete.html')
+
+
+#def update(request, squirrel_ID):
+#    squirrel = Sighting.objects.get(unique_squirrel_ID = squirrel_ID)
+#    if request.method == 'POST':
+#        form = SightingForm(request.POST)
+#        context = {
+#                'form':form,
+#                }
+#        if form.is_valid():
+#            squirrel = form.save()
+#            squirrel.save()
+#            return redirect('sightings/%s'%squirrel_ID)
+#    else:
 
