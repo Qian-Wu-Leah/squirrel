@@ -10,6 +10,7 @@
 
 <body>
 
+<<<<<<< HEAD
 <dive class = 'row'>
 {% for sighting in sightings %}
 	<p>
@@ -17,6 +18,14 @@
 	{{sighting.unique_squirrel_ID}}
 	</p>
 	<br>
+=======
+<div class = 'row'>
+{% for squ in squirrels %}
+        <p><a href='{{squ.unique_squirrel_ID}}'>{{squ.unique_squirrel_ID}}</a></p>
+
+
+	<br><br>
+>>>>>>> bc6d3fd0572d70b8ecd44d4445ab31aac050092b
 {% endfor %}
 </div>
 
