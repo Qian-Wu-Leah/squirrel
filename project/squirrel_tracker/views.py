@@ -21,7 +21,22 @@ def sightings(request):
     return render(request,'squirrel_tracker/sightings.html',context)
 
 def stats(request):
-    return HttpResponse(f"STATS")
+    count_age = Sighting.objects.values('age').order_by('age').annotate(age_count=Count('age'))
+    count_running = Sighting.objects.values('running').order_by('running').annotate(running_count=Count('running'))
+    count_chasing = Sighting.objects.values('chasing').order_by('chasing').annotate(chasing_count=Count('chasing'))
+    count_primary_fur_color = Sighting.objects.values('primary_fur_color').order_by(
+            'primary_fur_color').annotate(primary_fur_color_count=Count('primary_fur_color'))
+    count_location = Sighting.objects.values('location').order_by(
+            'location').annotate(location_count=Count('primary_fur_color'))
+    
+    context={
+            'count_age':count_age,
+            'count_running':count_running,
+            'count_chasing':count_chasing,
+            'count_primary_fur_color':count_primary_fur_color,
+            'count_location':count_location,
+            }
+    return render(request, 'squirrel_tracker/stats.html', context)
 
 def add(request): 
     if request.method == 'POST':

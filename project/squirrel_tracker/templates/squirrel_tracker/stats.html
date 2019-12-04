@@ -1,0 +1,124 @@
+<head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+
+<h2>Age Stats</h2>
+<div class = 'table'>
+     <table border=1px solid black>
+        <thead>
+          <tr>
+              <th>Age	</span></th>
+              <th>Count	</span></th>
+          </tr>
+        </thead>
+	<tbody>
+	  {% for dictionary in count_age %}
+	  <tr>
+	  {% for key, val in dictionary.items %}
+	      <td>{{val}}</td>
+	  {% endfor%}
+	  </tr>
+	</tbody>
+        {% endfor %}
+      </table>
+      <br>
+</div>
+
+<h2>Running Stats</h2>
+<div class = 'table'>
+     <table border=1px solid black>
+        <thead>
+          <tr>
+              <th>Running</th>
+              <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for dictionary in count_running %}
+          <tr>
+          {% for key, val in dictionary.items %}
+              <td>{{val}}</td>
+          {% endfor%}
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <br>
+</div>
+
+<h2>Chasing Stats</h2>
+<div class = 'table'>
+     <table border=1px solid black>
+        <thead>
+          <tr>
+              <th>Chasing</th>
+              <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for dictionary in count_chasing %}
+          <tr>
+          {% for key, val in dictionary.items %}
+              <td>{{val}}</td>
+          {% endfor%}
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <br>
+</div>
+
+<h2>Primary Fur Color Stats</h2>
+<div class = 'table'>
+     <table border=1px solid black>
+        <thead>
+          <tr>
+              <th>Primary Fur Color</th>
+              <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for dictionary in count_primary_fur_color %}
+          <tr>
+          {% for key, val in dictionary.items %}
+              <td>{{val}}</td>
+          {% endfor%}
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <br>      
+</div>
+
+<h2>Location Stats</h2>
+<div class = 'table'>
+     <table border=1px solid black>
+        <thead>
+          <tr>
+	      <th>Location</th>
+              <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for dictionary in count_location %}
+          <tr>
+          {% for key, val in dictionary.items %}
+              <td>{{val}}</td>
+          {% endfor%}
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <br>
+</div>
+
+
+
+
