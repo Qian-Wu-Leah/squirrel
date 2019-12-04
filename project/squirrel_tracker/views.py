@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Sighting
 
 from django.forms import ModelForm
@@ -32,7 +33,7 @@ def add(request):
         form = SightingForm(request.POST)
         if form.is_valid():           
             form.save()
-            return redirect('sightings/')
+            return redirect('sightings')
     else:
         form = SightingForm()
     return render(request, 'squirrel_tracker/add.html', {'form': form})
