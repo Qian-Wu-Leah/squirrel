@@ -6,16 +6,12 @@
 </head>
 
 
-
-
 <body>
 
 <div class = 'row'>
-{% for sighting in sightings %}
+{% for squirrel in squirrels %}
 	<p>
-	<a href = '/{{sighting.unique_squirrel_ID}}'>
-	{{sighting.unique_squirrel_ID}}
-	</a>
+	<a href = '{{squirrel.unique_squirrel_ID}}' id='{{squirrel.unique_squirrel_ID}}'/>{{squirrel.unique_squirrel_ID}}</a>
 	</p>
 	<br>
 {% endfor %}
