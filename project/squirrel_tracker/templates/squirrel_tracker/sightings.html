@@ -1,7 +1,7 @@
 
 
 <head>
-	To add an new squrrel sighting, click <a href='sightings/add/'><strong>HERE</strong></a>
+	To add an new squrrel sighting, click <a href='add/'><strong>HERE</strong></a>
 
 </head>
 
@@ -11,11 +11,12 @@
 <body>
 
 <dive class = 'row'>
-{% for squ in squirrels %}
-	<p>{{squ.unique_squirrel_ID}}</p>
-
-
-	<br><br>
+{% for sighting in sightings %}
+	<p>
+	<a href = '/{{sighting.unique_squirrel_ID}}'>
+	{{sighting.unique_squirrel_ID}}
+	</p>
+	<br>
 {% endfor %}
 </div>
 
