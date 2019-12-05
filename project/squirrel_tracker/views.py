@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Sighting
 from .forms import SightingForm
 from django.db.models import Count,Sum
-
+from django.contrib import messages 
 
 def map(request):
     sightings = Sighting.objects.all()
@@ -43,8 +43,8 @@ def add(request):
     if request.method == 'POST':
         form = SightingForm(request.POST)
         if form.is_valid():           
-            form.save()
-            return redirect('sightings')
+            new_sighting = form.save()
+            return HttpResponseRedirect('/sightings/')
     else:
         form = SightingForm()
     return render(request, 'squirrel_tracker/add.html', {'form': form})
@@ -63,6 +63,7 @@ def ID(request,squirrel_ID):
                 'squirrel':squirrel,
                 'form':form,
                 }
+       # return redirect('sightings')
     return render(request,'squirrel_tracker/ID.html',context)
 
 def delete(request, squirrel_ID):
