@@ -1,5 +1,7 @@
 
+{% extends "squirrel_tracker/header.html" %}
 
+{% block content %}
 <h3>
 	To add an new squirrel sighting, click <a href='add/'><strong>HERE</strong></a>
 
@@ -7,7 +9,9 @@
 <li>
         If you want to see the map, click <a href='/map/'><strong>HERE</strong></a>
 </li>   
-
+<li>
+        If you want to see the general stats of sightings, click <a href='stats/'><strong>HERE</strong></a>
+</li>
 <body>
 
 <div class = 'row'>
@@ -23,3 +27,4 @@
 
 
 </body>
+{% endblock %}
