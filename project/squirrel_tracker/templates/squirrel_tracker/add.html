@@ -1,8 +1,11 @@
 
-
-<form action ='/sightings/' method ='post'>
+<h2>Add A New Sighting</h2>
+<li>
+	Click <a href="/sightings/"><strong>HERE</strong></a> , if you want to cancel and go back.
+</li>
+<br>
+<form action ='/sightings/add/' method ='post'>
 	{%csrf_token%}
 	{{ form.as_p }}
-	<input type='submit' value='Submit'>
-
+	<button type="submit" class="btn">Submit</button>
 </form>

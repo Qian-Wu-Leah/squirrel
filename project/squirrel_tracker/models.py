@@ -17,6 +17,7 @@ class Sighting(models.Model):
     unique_squirrel_ID = models.CharField(
             max_length = 50,
             help_text=_('Squirrel_ID'),
+            unique = True,
             )
 
     PM = 'pm'
