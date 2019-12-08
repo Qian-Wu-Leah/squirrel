@@ -18,6 +18,7 @@ class Sighting(models.Model):
             max_length = 50,
             help_text=_('Squirrel_ID'),
             unique = True,
+            null=True,
             )
 
     PM = 'pm'
