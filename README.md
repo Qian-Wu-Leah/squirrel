@@ -32,3 +32,11 @@ This app will allow you to view NYC squirrel sightings, in both map and list for
 <h2> Deployment </h2>
 <a href= "https://tool-for-analytics-254020.appspot.com/sightings">https://tool-for-analytics-254020.appspot.com/sightings</a>
 </p>
+
+<br>
+<p>
+<h2>Attribution </h2>
+<li> CSV data source: https://data.cityofnewyork.us/api/views/vfnx-vebw/rows.csv 
+<li> Open street Map:https://www.openstreetmap.org/about/
+<li> Goohle App Engine Guide: https://docs.google.com/document/d/1YNIAdG6ZKa08KL9Hne94xp_KshCv0i5HzgWcLKAk7J0/
+</p>
