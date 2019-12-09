@@ -30,5 +30,5 @@ This app will allow you to view NYC squirrel sightings, in both map and list for
 
 <p>
 <h2> Deployment </h2>
-<a href: "https://tool-for-analytics-254020.appspot.com">https://tool-for-analytics-254020.appspot.com </a>
+<a href= "https://tool-for-analytics-254020.appspot.com/sightings">https://tool-for-analytics-254020.appspot.com/sightings</a>
 </p>
